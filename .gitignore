@@ -89,7 +89,7 @@ target/
 .mypy_cache/
 
 # data
-data/*
+data/test_data/*
 models/*
 
 
@@ -132,8 +132,7 @@ terraform.rc
 **/.terraform.lock*
 
 
-
-
+data/test_data/*
 config.cfg
 .ruff_cache
 .venv
