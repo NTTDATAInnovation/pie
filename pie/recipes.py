@@ -1,5 +1,6 @@
 from langchain.prompts import PromptTemplate
 
+
 TAG_LIST = [
     "{{NAME}}",
     "{{EMAIL}}",
