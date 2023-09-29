@@ -13,6 +13,8 @@ loguru = "^0.7.2"
 rich = "^13.5.3"
 pandas = "2.0.1"
 
+[tool.poetry.group.dev]
+optional = true
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.4.0"
@@ -20,6 +22,8 @@ pytest = "^7.4.2"
 nervaluate = "^0.1.8"
 ipykernel = "^6.25.2"
 
+[tool.poetry.group.spacy]
+optional = true
 
 [tool.poetry.group.spacy.dependencies]
 typer = "^0.9.0"

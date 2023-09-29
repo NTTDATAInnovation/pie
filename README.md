@@ -18,9 +18,12 @@ pie.bake(text)
 # 'hej, jeg hedder {PERSON}, jeg bor på {LOCATION}'
 ```
 
+## Getting started
+Create a `config.cfg` file in the root directory. Make the necessary adjustments to pie/filling.py.Note that the current system is set up to use OpenAI. Please do not remove the OpenAI
 
-## Get started
-TBA
+
+## Changing the LLM
+The LLM specification is found in `pie/filling.py` and in your config.cfg. If changing the LLM, please do not remove the OpenAI implementation. Instead, add your own implementation and update the `pie/filling.py` to use your implementation.
 
 ### Run as docker container.
 Install [`docker`](https://docs.docker.com/get-docker/). Then run
