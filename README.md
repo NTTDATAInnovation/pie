@@ -1,9 +1,9 @@
 PIE (Personal Information Eraser)
 ==============================
-*Let's bake!*
-<img src='media/pie-logo.png'>
 
-A GenAI-based API micro-services to remove PII (Person identifiable Information) from text. Wrapped in a half-baked allegory.
+<img src='media/pie-logo.png' width="200"/>
+
+A GenAI-based API micro-services to remove PII (Personally Identifiable Information) from text. Wrapped in a half-baked allegory.
 
 ## Example
 This is an example of local use. Serving directly through fastapi is preferable.
