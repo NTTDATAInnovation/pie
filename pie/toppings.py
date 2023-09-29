@@ -8,11 +8,6 @@ def apply_toppings(text):
     return text
 
 
-# "{{LOCATION}}": re.compile(
-#     "(?:[A-Za-zÆæØøÅå\\.-]+){3,3}(?:\\s?[Vv]ej[^r](?:en)?|[Gg]ade|s?\\s[
-# P]lads|\\s?[Aa]ll[é])(?:\\s?\\d{1,})?"
-# ),
-
 TOPPINGS = {
     "{{PHONE}}": re.compile(
         "((?:\\+\\d{2}[-\\.\\s]??|\\d{4}[-\\.\\s]??)?(?:\\d{3}[-\\.\\s]??\\d{3}[-\\.\\s]??\\d{4}|\\(\\d{3}\\)\\s*\\d{3}[-\\.\\s]??\\d{4}|\\d{3}[-\\.\\s]??\\d{4}))"
@@ -21,7 +16,9 @@ TOPPINGS = {
     "{{LINK}}": re.compile(
         "((http|https)\\:\\/\\/)?[a-zA-Z0-9\\.\\/\\?\\:@\\-_=#]{2,}\\.([a-zA-Z]){2,6}([a-zA-Z0-9\\.\\&\\/\\?\\:@\\-_=#])*"
     ),
-    "{{CPR NUMBER}}": re.compile("[0-3]\\d[0-1]\\d{3}\\-\\d{4}"),
+    "{{CPR NUMBER}}": re.compile(
+        "[0-3]\\d[0-1]\\d{3}\\-\\d{4}"
+    ),  # Danish social security number
 }
 
 # LARGE TOKEN MASKING

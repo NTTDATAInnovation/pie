@@ -133,6 +133,7 @@ terraform.rc
 
 
 data/test_data/*
+data/*.json
 config.cfg
 .ruff_cache
 .venv

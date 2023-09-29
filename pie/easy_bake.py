@@ -11,12 +11,16 @@ FULL_TEXT_CHECKS = re.compile(r"^([\d\w]{20,}|[^\d\w]+|.{,2}|{{[^\{}]+}})$")
 
 
 def _easy_bake(content: str):
-    r"""A function to heuristically check if an entity is in the content.
-    Current checks
+    r"""Checks if any of the following conditions are met and triggers quick return
+    if so:
     - No tokens have < 30 chars
+    (We assume that no PII token is more than 30 chars)
     - String is only \w\d and > 15 chars
+    (If one single text over 15 characters, it's probably not PII)
     - There's no text nor digits
+    (If there's no text or digits, it's probably not PII)
     - String is less than 3 characters.
+    (Arguably, this is not a good indicator, but it might be good enough for now.)
 
     Returns:
         Bool: Indication of whether to return directly or not.
@@ -33,6 +37,8 @@ def _easy_bake(content: str):
 
 
 def easy_bake(func):
+    """A decorators to check if we should return early without calling the API."""
+
     @wraps(func)
     def inner(self, query):
         return func(self, query) if not _easy_bake(query) else query
